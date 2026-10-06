@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tushar Kumar Mahata — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --ink: #0f172a;
+        --body: #334155;
+        --muted: #64748b;
+        --accent: #7c3aed;
+        --accent-dk: #5b21b6;
+        --accent-lt: #ede9fe;
+        --accent-lt2: #f5f3ff;
+        --line: #e2e8f0;
+        --pink: #db2777;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        background: #e8eaf0;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        color: var(--body);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .sheet {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 12mm auto;
+        background: #fff;
+        box-shadow: 0 6px 28px rgba(15, 23, 42, .16);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* ---------------- header ---------------- */
+    header {
+        background: linear-gradient(125deg, #1e1b4b 0%, #4c1d95 48%, #7c3aed 100%);
+        color: #fff;
+        padding: 10mm 14mm 8mm;
+        position: relative;
+        overflow: hidden;
+    }
+    header::after {
+        content: "";
+        position: absolute;
+        right: -28mm; top: -34mm;
+        width: 96mm; height: 96mm;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), rgba(255,255,255,0) 68%);
+    }
+    header::before {
+        content: "";
+        position: absolute;
+        left: 0; bottom: 0;
+        width: 100%; height: 3px;
+        background: linear-gradient(90deg, #7c3aed, #db2777, #f59e0b);
+    }
+
+    .eyebrow {
+        font-size: 7.5pt;
+        font-weight: 700;
+        letter-spacing: .28em;
+        text-transform: uppercase;
+        color: #c4b5fd;
+        margin: 0 0 3.5mm;
+        position: relative;
+        z-index: 1;
+    }
+
+    h1 {
+        font-family: "Space Grotesk", "Inter", sans-serif;
+        font-size: 33pt;
+        line-height: 1.02;
+        letter-spacing: -.025em;
+        font-weight: 700;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .role {
+        font-size: 11pt;
+        font-weight: 600;
+        letter-spacing: .02em;
+        color: #ddd6fe;
+        margin: 3.5mm 0 0;
+        position: relative;
+        z-index: 1;
+    }
+    .role b { color: #fff; font-weight: 700; }
+
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2mm;
+        margin-top: 5.5mm;
+        position: relative;
+        z-index: 1;
+    }
+    .contact span {
+        font-size: 8pt;
+        font-weight: 500;
+        background: rgba(255,255,255,.14);
+        border: 1px solid rgba(255,255,255,.22);
+        border-radius: 20mm;
+        padding: 1.5mm 4mm;
+        white-space: nowrap;
+    }
+
+    /* ---------------- body layout ---------------- */
+    .content { padding: 7mm 14mm 10mm; }
+
+    .summary {
+        font-size: 10pt;
+        line-height: 1.6;
+        color: var(--body);
+        border-left: 3px solid var(--accent);
+        padding: 0 0 0 5mm;
+        margin: 0 0 5mm;
+    }
+    .summary strong { color: var(--ink); font-weight: 700; }
+
+    h2 {
+        font-family: "Space Grotesk", "Inter", sans-serif;
+        font-size: 10.5pt;
+        font-weight: 700;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--ink);
+        margin: 6mm 0 3.5mm;
+        display: flex;
+        align-items: center;
+        gap: 3.5mm;
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+    h2::before {
+        content: "";
+        width: 6.5mm; height: 6.5mm;
+        background: linear-gradient(135deg, var(--accent), var(--pink));
+        border-radius: 1.5mm;
+        transform: rotate(45deg);
+        flex: none;
+    }
+    h2::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--line);
+    }
+
+    /* ---------------- experience ---------------- */
+    .job { margin-bottom: 4mm; break-inside: avoid; page-break-inside: avoid; }
+    .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; }
+    .job-title { font-size: 11pt; font-weight: 700; color: var(--ink); margin: 0; }
+    .job-org { font-size: 9pt; font-weight: 600; color: var(--accent); margin-top: 1mm; }
+    .job-date {
+        font-size: 8pt; font-weight: 600; color: var(--muted);
+        white-space: nowrap; letter-spacing: .04em;
+        background: var(--accent-lt2); border: 1px solid var(--accent-lt);
+        border-radius: 20mm; padding: 1mm 3.5mm;
+    }
+    ul { margin: 3mm 0 0; padding-left: 5mm; }
+    li { font-size: 9.3pt; line-height: 1.5; margin-bottom: 1.4mm; }
+    li::marker { color: var(--accent); }
+    li b { color: var(--ink); font-weight: 600; }
+
+    /* ---------------- projects ---------------- */
+    .project {
+        border: 1px solid var(--line);
+        border-left: 3px solid var(--accent);
+        border-radius: 2mm;
+        padding: 3.5mm 4.5mm;
+        margin-bottom: 3.5mm;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        background: linear-gradient(180deg, #fff, #fdfcff);
+    }
+    .proj-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 5mm; }
+    .proj-title { font-size: 10.5pt; font-weight: 700; color: var(--ink); margin: 0; }
+    .proj-kind {
+        font-size: 7pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+        color: var(--muted); margin-top: 1.2mm;
+    }
+    .badges { display: flex; gap: 2mm; flex: none; }
+    .badge {
+        text-align: center;
+        background: var(--accent-lt);
+        color: var(--accent-dk);
+        border-radius: 1.8mm;
+        padding: 1.5mm 3mm;
+        line-height: 1.1;
+    }
+    .badge b { display: block; font-size: 12pt; font-weight: 800; letter-spacing: -.02em; }
+    .badge i { display: block; font-size: 6pt; font-style: normal; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .75; margin-top: .6mm; }
+    .project p { font-size: 9.3pt; line-height: 1.5; margin: 2.5mm 0 0; }
+    .stack {
+        display: flex; flex-wrap: wrap; gap: 1.6mm; margin-top: 3mm;
+        font-size: 7.3pt; font-weight: 600; color: var(--accent-dk);
+    }
+    .stack span { background: var(--accent-lt2); border: 1px solid var(--accent-lt); border-radius: 20mm; padding: 1mm 3mm; }
+
+    /* ---------------- skills ---------------- */
+    .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm 6mm; }
+    .skill-block h3 {
+        font-size: 7.5pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+        color: var(--muted); margin: 0 0 2.5mm;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 1.6mm; }
+    .chips span {
+        font-size: 8pt; font-weight: 600; color: var(--ink);
+        background: #f1f5f9; border: 1px solid var(--line);
+        border-radius: 1.4mm; padding: 1.2mm 2.8mm;
+    }
+    .chips span.hot { background: var(--accent-lt); border-color: #ddd6fe; color: var(--accent-dk); }
+
+    /* ---------------- education ---------------- */
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+    .edu {
+        border: 1px solid var(--line);
+        border-radius: 2mm;
+        padding: 4mm 5mm;
+        break-inside: avoid; page-break-inside: avoid;
+    }
+    .edu .k {
+        font-size: 7pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+        color: var(--accent); margin-bottom: 2mm;
+    }
+    .edu .t { font-size: 10pt; font-weight: 700; color: var(--ink); line-height: 1.3; }
+    .edu .s { font-size: 8.6pt; color: var(--muted); margin-top: 1.5mm; line-height: 1.45; }
+
+    /* ---------------- print ---------------- */
+    @page { size: A4; margin: 0; }
+
+    @media print {
+        html, body { background: #fff; }
+        .sheet {
+            margin: 0;
+            box-shadow: none;
+            width: 210mm;
+            min-height: 297mm;
+        }
+        * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+    <header>
+        <p class="eyebrow">Curriculum Vitae · 2026</p>
+        <h1>Tushar Kumar<br>Mahata</h1>
+        <p class="role"><b>Machine Learning Engineer</b> — Deep Learning · Computer Vision · NLP</p>
+        <div class="contact">
+            <span>Dhaka, Bangladesh</span>
+            <span>+880 1773 545778</span>
+            <span>tusharmahata07.cse@gmail.com</span>
+            <span>github.com/TusharMahata</span>
+        </div>
+    </header>
+
+    <div class="content">
+
+        <p class="summary">
+            I turn deep learning research into things people can actually use — <strong>image recognition,
+            object detection and NLP</strong>, taken from raw dataset to deployed endpoint. Six years of
+            freelance engineering (2020–present) taught me to ship under real constraints: real clients,
+            real deadlines. <strong>Google-certified TensorFlow Developer.</strong> I care
+            most about the unglamorous half of the job — preprocessing, tuning and the API in front of the
+            model, the part that decides whether it survives contact with production.
+        </p>
+
+        <h2>Experience</h2>
+
+        <div class="job">
+            <div class="job-head">
+                <div>
+                    <p class="job-title">WordPress &amp; Shopify Developer</p>
+                    <p class="job-org">Fiverr · Freelance</p>
+                </div>
+                <span class="job-date">2020 — Present</span>
+            </div>
+            <ul>
+                <li>Maintain, fix and <b>customise</b> WordPress and Shopify builds for a continuous roster of clients.</li>
+                <li>Take designs from concept to live storefront — full <b>theme design and redesign</b>, not just tweaks.</li>
+                <li>Hunt down slow assets and bloat, then apply <b>speed optimisation</b> so pages actually load.</li>
+                <li>Run <b>on-page SEO</b> passes — structure, metadata, content — so client sites get found.</li>
+            </ul>
+        </div>
+
+        <h2>Selected Projects</h2>
+
+        <div class="project">
+            <div class="proj-top">
+                <div>
+                    <p class="proj-title">Dog's Breed Classifier</p>
+                    <p class="proj-kind">Fine-grained image classification</p>
+                </div>
+                <div class="badges">
+                    <div class="badge"><b>95%</b><i>Accuracy</i></div>
+                </div>
+            </div>
+            <p>
+                Trained a transfer-learning model to tell 120 dog breeds apart using the Stanford Dogs
+                dataset from Kaggle. Built a TensorFlow input pipeline for efficient image classification, then pushed
+                architecture and hyperparameter choices through a long experiment loop to land at 95%.
+                Shipped as a <b>Dockerised FastAPI service</b> with endpoints for image upload and live prediction.
+            </p>
+            <div class="stack">
+                <span>TensorFlow</span><span>Transfer Learning</span><span>OpenCV</span><span>FastAPI</span><span>Docker</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="proj-top">
+                <div>
+                    <p class="proj-title">Footballer Classifier</p>
+                    <p class="proj-kind">Object detection &amp; ML pipeline</p>
+                </div>
+                <div class="badges">
+                    <div class="badge"><b>81.32%</b><i>Val. accuracy</i></div>
+                    <div class="badge"><b>673</b><i>Images</i></div>
+                </div>
+            </div>
+            <p>
+                Find and name famous footballers in photos. Faces located with Haar Cascade, cropped, then
+                pushed through <b>wavelet transformation</b> for feature engineering before a spread of ML
+                models ran through a single pipeline — best performer hit 81.32% on validation.
+                Deployed on Flask so anyone can drop in an image and get a prediction back.
+            </p>
+            <div class="stack">
+                <span>OpenCV</span><span>Flask</span><span>ML Pipeline</span><span>Scikit-Learn</span><span>HTML / CSS</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="proj-top">
+                <div>
+                    <p class="proj-title">PubMed 200k RCT Classification</p>
+                    <p class="proj-kind">NLP · Research reproduction</p>
+                </div>
+                <div class="badges">
+                    <div class="badge"><b>200k</b><i>Abstracts</i></div>
+                </div>
+            </div>
+            <p>
+                Rebuilt the model architecture from the original paper for sequential sentence classification
+                over the PubMed 200k RCT corpus: rigorous preprocessing, several competing architectures,
+                disciplined hyperparameter tuning, and <b>interpretability work so the results can be
+                explained</b> — not just reported — for biomedical literature classification.
+            </p>
+            <div class="stack">
+                <span>TensorFlow</span><span>NLP</span><span>Transfer Learning</span><span>Matplotlib</span><span>Explanatory Analysis</span>
+            </div>
+        </div>
+
+        <h2>Skills</h2>
+
+        <div class="skill-grid">
+            <div class="skill-block">
+                <h3>Languages</h3>
+                <div class="chips">
+                    <span class="hot">Python</span><span>C</span><span>SQL</span><span>HTML</span><span>CSS</span>
+                </div>
+            </div>
+            <div class="skill-block">
+                <h3>ML &amp; Frameworks</h3>
+                <div class="chips">
+                    <span class="hot">TensorFlow</span><span class="hot">Keras</span><span>Scikit-Learn</span><span>FastAPI</span><span>Flask</span>
+                </div>
+            </div>
+            <div class="skill-block">
+                <h3>Core Disciplines</h3>
+                <div class="chips">
+                    <span class="hot">Image Recognition</span><span>Object Detection</span><span>Transfer Learning</span><span>Predictive Maintenance</span><span>Model Optimisation</span>
+                </div>
+            </div>
+            <div class="skill-block">
+                <h3>Applied ML</h3>
+                <div class="chips">
+                    <span class="hot">GenAI Models</span><span>NLP</span><span>Real-time Data Processing</span><span>GPU Programming</span>
+                </div>
+            </div>
+            <div class="skill-block">
+                <h3>Data &amp; Tooling</h3>
+                <div class="chips">
+                    <span>OpenCV</span><span>Matplotlib</span><span>Docker</span><span>Relational Databases</span><span>Statistics</span>
+                </div>
+            </div>
+            <div class="skill-block">
+                <h3>Also</h3>
+                <div class="chips">
+                    <span>WordPress</span><span>Shopify</span><span>On-page SEO</span><span>Speed Optimisation</span><span>Team Collaboration</span>
+                </div>
+            </div>
+        </div>
+
+        <h2>Education &amp; Certification</h2>
+
+        <div class="edu-grid">
+            <div class="edu">
+                <div class="k">Bachelor's Degree</div>
+                <div class="t">Computer Science &amp; Engineering</div>
+                <div class="s">Daffodil International University, Dhaka, Bangladesh<br>2016 — 2021 · CGPA 3.10 / 4.00</div>
+            </div>
+            <div class="edu">
+                <div class="k">Certification</div>
+                <div class="t">TensorFlow Developer Certificate</div>
+                <div class="s">Google · Issued September 2023<br>Valid through September 2026</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
